@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LexiTrack | Secure Entry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f0f0f; font-family: 'Inter', sans-serif; }
+        .glow-box { box-shadow: 0 0 50px rgba(245, 158, 11, 0.05); }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen text-gray-200">
+    <div class="w-full max-w-md p-10 bg-[#121212] rounded-3xl border border-zinc-800 glow-box text-center">
+        <h1 class="text-4xl font-black text-white mb-8 tracking-tighter italic uppercase">LEXI<span class="text-amber-500">TRACK</span></h1>
+        
+        <form action="/" method="POST" class="space-y-6">
+            <input type="password" name="password" required autofocus
+                class="w-full px-6 py-4 bg-zinc-900 border border-zinc-800 rounded-2xl text-white text-center outline-none focus:ring-2 focus:ring-amber-500 transition"
+                placeholder="Access Key">
+            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-black font-black py-4 rounded-2xl transition uppercase tracking-widest text-sm shadow-lg shadow-amber-900/20">Unlock</button>
+        </form>
+
+        {% if error %}
+        <p class="mt-4 text-red-500 text-xs font-bold uppercase tracking-widest animate-pulse">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
